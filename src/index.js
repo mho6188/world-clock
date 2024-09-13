@@ -24,6 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  // Heidelberg
+  let heidelbergElement = document.querySelector("#heidelberg");
+  if (heidelbergElement) {
+    let heidelbergDateElement = heidelbergElement.querySelector(".date");
+    let heidelbergTimeElement = heidelbergElement.querySelector(".time");
+    let heidelbergTime = moment().tz("Europe/Heidelberg");
+
+    heidelbergDateElement.innerHTML = heidelbergTime.format("MMMM	Do YYYY");
+    heidelbergTimeElement.innerHTML = heidelbergTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
